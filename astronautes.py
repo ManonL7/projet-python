@@ -1,5 +1,7 @@
 import requests
+from pprint import pprint
 
 contenu = requests.get("http://api.open-notify.org/astros.json")
 for personne in contenu.json()["people"]:
-    print(personne)
+    if personne["craft"] == "ISS":
+        print(personne)
